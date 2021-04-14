@@ -1,6 +1,7 @@
 @extends('master')
 
 @section('content')
+    @if (Auth::check())
         <table class="table table-responsive table-hover">
             <tr>
                 <th>Serial</th>
@@ -31,4 +32,9 @@
                 </tr>
             @endforeach
         </table>
+        @else
+            <div>
+                <h2>Nothing to show, Please Register first</h2>
+            </div>
+        @endif
 @endsection

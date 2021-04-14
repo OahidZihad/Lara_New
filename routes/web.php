@@ -22,3 +22,7 @@ Route::post('/delete/{id}', 'firstInfoController@delete')->name('delete');
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -17,12 +17,30 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
+        @if (Auth::check())
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{ route('index') }}">Home</a>
+                <a class="nav-link active" aria-current="page" href="{{ route('index') }}">Home</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="{{ route('create') }}">Create</a>
+                <a class="nav-link" href="{{ route('create') }}">Create</a>
             </li>
+        @else
+            
+        @endif
+        </ul>
+        <ul class="navbar-nav ms-auto">
+            @if (Auth::check())
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('home') }}">Dashboard</a>
+                </li>
+            @else
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('register') }}">Register</a>
+                </li>
+            @endif
         </ul>
         </div>
     </div>
